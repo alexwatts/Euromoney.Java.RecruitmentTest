@@ -13,15 +13,15 @@ public class Program {
 	 */
 	public static void main(String[] args) throws IOException {
 		Dictionary bannedWordsDictionary = new Dictionary(Arrays.asList("swine","bad","nasty","horrible"));
-		String content =
-				"The weather in Manchester in winter is bad. It rains all the time - it must be horrible for people visiting.";
+		TextPhrase textPhrase = new TextPhrase("The weather in Manchester in winter is bad. It rains all the time - it must be horrible for people visiting.");
 		int count = 0;
-//		for (String word : bannedWords) {
-//			if (content.toLowerCase().contains(word)) {
-//				count++;
-//			}
-//		}
-		System.out.println("\nScanned the text sequence: " + content + "\n");
+
+        while (textPhrase.isMoreWords()) {
+            if (bannedWordsDictionary.isWordInDictionary(textPhrase.getNextWord())) {
+                count++;
+            }
+        }
+		System.out.println("\nScanned the text sequence: " + textPhrase.getTextPhrase() + "\n");
 		System.out.println("\nTotal number of banned words: " + count + "\n");
 		System.out.println("\nPress ENTER to exit!\n");
 		System.in.read();
