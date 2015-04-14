@@ -1,5 +1,6 @@
 package com.euromoney.ConsoleContent;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,12 +10,20 @@ import java.util.List;
  */
 public class Dictionary {
 
-    public Dictionary(List<String> bannedWords) {
+    private HashMap<String, Object> dictionary = new HashMap<String, Object>();
 
+    public Dictionary(List<String> bannedWords) {
+        initialiseDictionaryWithBannedWords(bannedWords);
     }
 
     public boolean isWordInDictionary(String word) {
-        return false;
+        return dictionary.containsKey(word);
+    }
+
+    private void initialiseDictionaryWithBannedWords(List<String> bannedWords) {
+        for (String word: bannedWords) {
+            dictionary.put(word, null);
+        }
     }
 
 }

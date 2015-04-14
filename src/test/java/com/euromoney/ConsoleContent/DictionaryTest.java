@@ -23,4 +23,18 @@ public class DictionaryTest {
         Assert.assertEquals(true, isBanned);
 
     }
+
+    @Test
+    public void testThatNormalWordIsNotDetectedInDictionary() {
+
+        //GIVEN
+        Dictionary bannedWordDictionary = new Dictionary(Arrays.asList("swine","bad","nasty","horrible"));
+
+        //WHEN
+        boolean isBanned = bannedWordDictionary.isWordInDictionary("normal");
+
+        //THEN
+        Assert.assertEquals(false, isBanned);
+
+    }
 }
