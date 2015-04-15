@@ -14,7 +14,7 @@ public class TextPhrase {
     private final Iterator textPhraseIterator;
 
     public TextPhrase(String phrase) {
-        initialiseTextPhrase(phrase);
+        initialiseTextPhrase(removeSpecialCharacters(phrase));
         textPhraseIterator = textPhrase.keySet().iterator();
     }
 
@@ -43,6 +43,10 @@ public class TextPhrase {
         while (st.hasMoreElements()) {
             textPhrase.put((String)st.nextElement(), null);
         }
+    }
+
+    private String removeSpecialCharacters(String phrase) {
+        return phrase.replaceAll("[^\\w\\s]","");
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Dictionary.java
  *
- * This is dictionary of bad words.
+ * This is a dictionary of bad words.
  */
 public class Dictionary {
 

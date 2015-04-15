@@ -17,7 +17,7 @@ public class DictionaryTest {
         Dictionary bannedWordDictionary = new Dictionary(Arrays.asList("swine","bad","nasty","horrible"));
 
         //WHEN
-        boolean isBanned = bannedWordDictionary.isWordInDictionary("bad");
+        boolean isBanned = bannedWordDictionary.isWordInDictionary("horrible");
 
         //THEN
         Assert.assertEquals(true, isBanned);
@@ -28,7 +28,7 @@ public class DictionaryTest {
     public void testThatNormalWordIsNotDetectedInDictionary() {
 
         //GIVEN
-        Dictionary bannedWordDictionary = new Dictionary(Arrays.asList("swine","bad","nasty","horrible"));
+        Dictionary bannedWordDictionary = new Dictionary(Arrays.asList("swine", "bad", "nasty", "horrible"));
 
         //WHEN
         boolean isBanned = bannedWordDictionary.isWordInDictionary("normal");
@@ -37,4 +37,5 @@ public class DictionaryTest {
         Assert.assertEquals(false, isBanned);
 
     }
+
 }

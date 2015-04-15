@@ -104,4 +104,17 @@ public class TextPhraseTest {
         Assert.assertEquals("a text phrase", textPhraseToTest);
     }
 
+    @Test()
+    public void testThatTextPhraseFiltersSpecialCharacters() {
+        //GIVEN
+        TextPhrase textPhrase = new TextPhrase("a.. text// phrase---");
+
+
+        //WHEN
+        String textPhraseToTest = textPhrase.getTextPhrase();
+
+        //THEN
+        Assert.assertEquals("a text phrase", textPhraseToTest);
+    }
+
 }
