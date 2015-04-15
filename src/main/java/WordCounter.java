@@ -1,5 +1,3 @@
-package com.euromoney.ConsoleContent;
-
 /**
  * WordCounter.java
  */

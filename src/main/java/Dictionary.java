@@ -1,5 +1,3 @@
-package com.euromoney.ConsoleContent;
-
 import java.util.HashMap;
 import java.util.List;
 

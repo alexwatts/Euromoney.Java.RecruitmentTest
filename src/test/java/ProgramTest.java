@@ -1,5 +1,3 @@
-package com.euromoney.ConsoleContent;
-
 import java.io.IOException;
 
 import org.junit.Test;

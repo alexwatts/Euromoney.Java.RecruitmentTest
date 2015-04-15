@@ -1,5 +1,3 @@
-package com.euromoney.ConsoleContent;
-
 import junit.framework.Assert;
 import org.junit.Test;
 
