@@ -1,4 +1,4 @@
-# Mars Rover Coding Exercise
+# Euromoney Coding Exercise
 
 Required dependancies are:
 
