@@ -1,7 +1,7 @@
 package com.euromoney.ConsoleContent;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.StringTokenizer;
 
 /**
@@ -9,13 +9,13 @@ import java.util.StringTokenizer;
  */
 public class TextPhrase {
 
-    private final LinkedHashMap<String, Object> textPhrase = new LinkedHashMap<String, Object>();
+    private final ArrayList<String> textPhrase = new ArrayList<String>();
 
     private final Iterator textPhraseIterator;
 
     public TextPhrase(String phrase) {
         initialiseTextPhrase(removeSpecialCharacters(phrase));
-        textPhraseIterator = textPhrase.keySet().iterator();
+        textPhraseIterator = textPhrase.iterator();
     }
 
     public String getNextWord() {
@@ -28,7 +28,7 @@ public class TextPhrase {
 
     public String getTextPhrase() {
         StringBuilder output = new StringBuilder();
-        Iterator phraseIterator = textPhrase.keySet().iterator();
+        Iterator phraseIterator = textPhrase.iterator();
         while (phraseIterator.hasNext()) {
             output.append(phraseIterator.next());
             output.append(" ");
@@ -41,7 +41,8 @@ public class TextPhrase {
     private void initialiseTextPhrase(String phrase) {
         StringTokenizer st = new StringTokenizer(phrase, " ");
         while (st.hasMoreElements()) {
-            textPhrase.put((String)st.nextElement(), null);
+            String word = (String)st.nextElement();
+            textPhrase.add(word);
         }
     }
 
