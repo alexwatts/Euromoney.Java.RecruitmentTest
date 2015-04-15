@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
  */
 public class TextPhrase {
 
+    private String originalPhrase;
+
     private final ArrayList<String> textPhrase = new ArrayList<String>();
 
     private final Iterator textPhraseIterator;
@@ -14,6 +16,7 @@ public class TextPhrase {
     public TextPhrase(String phrase) {
         initialiseTextPhrase(removeSpecialCharacters(phrase));
         textPhraseIterator = textPhrase.iterator();
+        this.originalPhrase = phrase;
     }
 
     public String getNextWord() {
@@ -34,6 +37,10 @@ public class TextPhrase {
         //remove the last space
         output.setLength(output.length() - 1);
         return output.toString();
+    }
+
+    public String getOriginalPhrase() {
+        return originalPhrase;
     }
 
     private void initialiseTextPhrase(String phrase) {
